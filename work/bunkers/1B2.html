@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="assets/css/1B2.css"/>
+    <!-- modal -->
+<!--     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div class="video_contain">
+	<video id="video" src="assets/video/atlas_ICBM.mp4" preload="auto" autoplay=true></video>
+</div>
+
+<div class="wrapper">
+	<img class="image a" onclick="popUp()" src="assets/images/barbecue.png">
+	<img class="image b" onclick="popUp()" src="assets/images/fountain.png">
+	<img class="image c" onclick="popUp()" src="assets/images/window.png">
+	<img class="image d" onclick="popUp()" src="assets/images/paradise.jpg">
+	<img class="image e" onclick="popUp()" src="assets/images/atlas.jpg">
+	<img class="image f" onclick="popUp()" src="assets/images/handbook.jpg">
+	<img class="image g" onclick="popUp()" src="assets/images/bomb_shelter.jpg">
+	<img class="image h" onclick="popUp()" src="assets/images/explosion.png">
+
+<!-- prove humanity -->
+	<div id="secret-container">
+		<img id="folder" src="assets/images/folder.png">
+		<p>CONTROL_ROOM_MASTER</p>
+	</div>
+</div>
+
+
+<!-- The Modal -->
+<div id="modal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+		<header id="modal-header">
+			<span class="modal-title">Security Check</span>
+			<span class="close">&times;</span>
+		</header>
+
+		<footer id="modal-footer">
+
+		    <p id="proveit">Prove you are human</p>
+		    <p class="result"></p>
+		    <img src="assets/images/mystery_word.png">
+		    
+		    <p id="result"></p>
+
+			<p>
+				<label for="scoreInput">Type the word you see above: </label>
+			  	<input type="text" id="scoreInput">
+			</p>
+
+			<button id="grade">SUBMIT</button>
+		</footer>
+</div>
+<!-- End modal -->
+
+
+<audio id="wrongBuzzer">
+  <source src="assets/video/alarm.mov" type="audio/mpeg">
+</audio>
+
+
+<script>
+// $(document).ready(function(){
+// 	$('body,html').animate({scrollTop: 13000}, 170000); 
+// });
+
+function popUp() {
+	window.open("http://www.atlasmissilesilo.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=500,width=1000,height=900");
+}
+
+// Get the modal
+var modal = document.getElementById('modal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("secret-container");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.ondblclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// //trigger wrong buzzer
+// var audio = document.getElementById("wrongBuzzer"); 
+
+// function playAudio() { 
+//     audio.play(); 
+// } 
+
+// function pauseAudio() { 
+//     audio.pause(); 
+// } 
+
+
+//Enter password in modal
+var grade = "";
+var score = 0;
+
+// this listens for the button click
+document.getElementById("grade").onclick = assignGrade;
+
+function assignGrade() {
+  // grab what was typed
+  score = document.getElementById("scoreInput").value;
+
+  // make sure they typed a number. If not, end the function.
+  // if score is "not a number," isNaN() returns false 
+  //  if (isNaN(score)) {
+  //   document.getElementById("result").innerHTML = "You must type a NUMBER.";
+  //   return;
+  // } 
+  // test the number and determine letter grade
+  if (score == "bunker") {
+    grade = "CORRECT";
+    document.getElementById("result").innerHTML = "CORRECT";
+    	// pauseAudio();
+   		window.open("1B2B3.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=120,left=50,width=650,height=452");
+  } else {
+    grade = "INCORRECT";
+    	document.getElementById("result").innerHTML = "INCORRECT";
+   		document.getElementById("modal").style.backgroundColor = "rgba(255,0,0,0.8)";
+   		playAudio();
+  }
+}
+//end of password function
+
+
+
+</script>
+
+</body>
+</html>

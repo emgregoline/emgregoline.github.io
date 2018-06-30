@@ -1,0 +1,127 @@
+<!-- Enter password to control panel
+-"FOUR DIGIT ACCESS CODE"
+
+>> trigger pop-up CONTROL PANEL-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ENTER</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<style>
+
+	body {
+		margin: 0;
+		background-color: black;
+	}
+
+	.chisel {
+	    padding: 15px 0;
+	    border-top: 7px solid #E5E2D4;
+	    border-left: 7px solid #C0BDAE;
+	    border-right: 7px solid #9B9888;
+	    border-bottom: 7px solid #827F71;
+	    background-color: #AFAC9B;
+		font-family: "Times New Roman", Times serif;
+		font-size: 18pt;
+		letter-spacing: 0.6pt;
+		font-weight: bold;
+		text-align: center;
+		width: 75%;
+		height: 42vh;
+		top: 21vh;
+		position: relative;
+		margin: auto;
+	}
+
+	#grade {
+	    border-top: 7px solid #3333ff;
+	    border-left: 7px solid mediumblue;
+	    border-right: 7px solid darkblue;
+	    border-bottom: 7px solid midnightblue;
+	    background-color: blue;
+	    color: white;
+		font-family: "Arial", Helvetica, sans-serif;
+		font-size: 14pt;
+		text-align: center;
+		letter-spacing: 1pt;		
+	}
+
+	#grade:hover {
+		cursor: pointer;
+	}
+
+	#grade:focus {
+    	outline: none;
+}
+
+	#grade:active {
+		border-right: 7px solid #3333ff;
+	    border-bottom: 7px solid mediumblue;
+	    border-top: 7px solid darkblue;
+	    border-left: 7px solid midnightblue;
+	    padding-left: 20px;
+	}
+
+	#scoreInput {
+		background-color: black;
+		font-family: Courier, monospace;
+		font-size: 23pt;
+		color: lime;
+		width: 200px;
+	}
+
+	#scoreInput:focus {
+    	outline: none;
+}
+
+
+	</style>
+</head>
+<body>
+
+
+
+<div class="chisel" align="center">
+	<p>ENTER FOUR-DIGIT ACCESS CODE</p>
+
+	<p>
+ 		<input type="text" id="scoreInput">
+	</p>
+
+	<button id="grade">SUBMIT</button>
+</div> 
+
+
+<script>
+
+//Enter password in modal
+var grade = "";
+var score = 0;
+
+// this listens for the button click
+document.getElementById("grade").onclick = assignGrade;
+
+function assignGrade() {
+  	// grab what was typed
+  	score = document.getElementById("scoreInput").value;
+
+  	// test the number and determine letter grade
+	if (score == "4321") {
+		// alert("ACCESS GRANTED");
+  		window.location = "1B2B3.html";
+ 	} else {
+    	// document.getElementById("result").innerHTML = "INCORRECT";
+    	grade = "INCORRECT";
+   		// document.("body").style.backgroundColor = "rgba(255,0,0)";
+   		window.open("1B2A.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=120,left=50,width=300,height=250");
+  }
+}
+//end of password function
+
+
+</script>
+
+</body>
+</html>

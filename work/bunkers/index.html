@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index</title>
+    <meta charset="utf-8"/>
+<style>
+
+body {
+	margin: 0;
+	background-color: black;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
+
+.container {
+	height: 100vh;
+	width: inherit;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="container"> <img url="assets/images/SMS_SiteA.jpg"></div>
+
+
+<script>
+var password = "bunker";
+var x = prompt("Enter password");
+
+if (x.toLowerCase() == password) {
+  alert("ACCESS GRANTED");
+  window.location = "1B.html";
+}
+
+else {
+  alert("DENIED");
+  window.open("1A.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=600,width=300,height=250");
+}
+
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Survival Condo Project</title>
+    <meta charset="utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+	body {
+		margin: 0;
+		overflow: hidden;
+		background-color: black;
+	}
+
+	#video {
+		top: 0;
+		width: 100%;
+ 		height: 100%;
+	}
+
+</style>
+</head>
+<body>
+
+<video id="video" src="assets/video/survival_condo_2.mp4" preload="auto" autoplay=true  muted="muted">
+</video>
+
+<script>
+$("video").click( function (){
+    $(this).prop('muted', !$(this).prop('muted'));
+});
+
+</script>
+
+</body>
+</html>
