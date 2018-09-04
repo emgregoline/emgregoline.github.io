@@ -1,0 +1,90 @@
+body {
+	margin: 0;
+}
+
+#wrapper {
+	background-color: white;
+	display: flex;
+	flex-direction: row; 
+	height: 100vh;
+	justify-content: center;
+}
+
+.slide-container {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	background-color: pink;
+	text-align: center;
+	width: 88%;
+}
+
+.caption {
+	font-size: 42px;
+	text-align: left;
+   	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*   	font-weight: 300;*/
+/*   	margin-left: 20px;*/
+	letter-spacing: 1.5px;
+	display: flex;
+/*	height: 30vw;*/
+	line-height: 37pt;
+	margin-top: 2%;
+/*	z-index: 1;*/
+}
+
+#slide-image {
+	/*max-width: 56vw;*/
+	height: 59%;
+	align-self: center;
+	padding: 20px;
+	z-index: 2;
+	display: inline-block;
+}
+
+.image {
+/*	width: 100%;*/
+}
+
+.caption a {
+/*	border-bottom: 2.5px solid currentColor;*/
+	/*text-decoration: none;*/
+	padding-bottom: 2px;
+	line-height: 72pt;
+	color: red;
+	text-transform: uppercase;
+	padding-right: 40px;
+}
+
+.caption a:hover{
+	font-style: italic;
+    letter-spacing: 1.8px;
+}
+
+.deg0 {
+	transform: rotate(0deg);
+}
+
+.deg90 {
+	transform: rotate(90deg);
+}
+
+.deg180 {
+	transform: rotate(180deg);
+}
+
+.deg270 {
+	transform: rotate(270deg);
+}
+
+@ media-screen width=600
+slide is 100vw
+/*.upper {
+	height: 20%;
+}
+
+.lower{
+	height: 20%;
+	margin-bottom: 3%
+}*/

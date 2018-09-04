@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    cursor: none;
+}
+
+canvas {
+    background: transparent;
+    z-index: 10;
+    display: inline-block;
+    position: absolute;
+}
+
+.text {
+    font-family: Arial, sans-serif;
+    font-size: 80px;
+    letter-spacing: 2px;
+    line-height: 100px;
+    z-index: -10;
+    display: block;
+    text-align: left;
+    width: 100vh;
+    float: right;
+    color: red;
+    top: 30px;
+    position: relative;
+}
+
+ #stamp1 {
+     display: none;
+ }
+
+ #stamp2 {
+     display: none;
+ }
+
+ #stamp3 {
+     display: none;
+ }
+
+ #stamp4 {
+     display: none;
+ }
+
+ #stamp5 {
+     display: none;
+ }
+
+ #stampE {
+     display: none;
+ }
+
+ nav{
+     position: absolute;
+     top: 0;
+     left: 0;
+     font-size: 0;
+     z-index: 1000000;
+ }
+
+ nav button {
+     font-size: 24px;
+     background-color: black;
+     color: white;
+     margin-right: 4px;
+     margin-top: 4px;
+     border-radius: 0%;
+     border: none;
+ }
+
+ nav button:first-child{
+     margin-left: 4px;
+ }
+
+ nav button:focus {
+     outline: none;
+ }
+
+ nav button:active{
+     color: lime;
+     background-color: black;
+ }

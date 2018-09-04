@@ -1,0 +1,18 @@
+.next {
+	width: 50px; 
+	height: 20px; 
+	background-color: blue; 
+	cursor: pointer;
+}
+
+.slide-container {
+	/*display: none;*/
+}
+
+#first {
+	display: block;
+}
+
+#slide-image {
+	width: 200px;
+}

@@ -1,0 +1,86 @@
+body {
+	margin: 0px;
+}
+
+.container {
+	/*display: flex;*/
+	align-items: center;
+}
+
+.thumb-container {
+	/*height: -webkit-fill-available;*/
+	width: 200px;
+	display: inline-block;
+	float: center;
+	position: relative;
+	vertical-align: none;
+}
+
+/*.thumbnail {
+height: 100px;
+}
+
+*/
+img {
+	width: 200px;
+	position: relative;
+	/*left: 20px;*/
+	/*object-fit: contain;*/
+	/*position: absolute;*/
+	/*height: inherit;*/
+}
+
+
+.thumb-caption {
+	z-index: -2;
+	font-size: 12pt;
+	font-family: Arial, helvetica, sans-serif;
+	letter-spacing: .2pt;
+	width: inherit;
+	height: inherit;
+}
+
+.draggable {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	background-color: black;
+	position: fixed;
+	z-index: 100000;
+	cursor: pointer;
+	  -webkit-transition: background-color .3s ease-out;
+  -moz-transition: background-color .3s ease-out;
+  -o-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
+}
+
+/*lights*/
+.darkness {
+	background-color: black;
+  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+}
+
+.lights {
+	top: 75px;
+	right: 75px;
+}
+
+.lights:hover {
+	background-color: white;
+  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+}
+
+.shine {
+	background-color: white;
+  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+}
+

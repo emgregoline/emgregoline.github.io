@@ -1,0 +1,235 @@
+body {
+	margin: 0;
+	overflow: hidden;
+	-webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+	/*overflow: hidden;*/
+}
+
+.darkness {
+	background-color: black;
+  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+}
+/*
+.underline {
+	border-bottom: 1pt currentcolor;
+}*/
+.slide-container {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	float: middle;
+	vertical-align: middle;
+	height: 100%;
+	text-align: center;
+	align-items: center;
+	width: 100%;
+	/*margin: 2.5%;*/
+	/*background-color: yellow;*/
+}
+
+.caption.upper {
+	margin-top: 3%;
+}
+
+.caption.lower {
+	margin-top: 0;
+	bottom: 0;
+}
+
+.middle {
+	max-height: 60%;
+	width: -webkit-fill-available;
+	height: -webkit-fill-available;
+	display: flex;
+    flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	z-index: 1;
+}
+
+#slide-image {
+	max-width: 75%;
+    width: -webkit-fill-available;  
+    height: -webkit-fill-available;  
+	object-fit: contain;
+	align-items: center;
+	padding: 1%;
+	/*float: auto;*/
+}
+
+.hide {
+	display: none;
+}
+
+.caption {
+	font-size: 38px;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 2px;
+	line-height: 33pt;
+	width: 86%;
+	hyphens: none;
+}
+
+.caption p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#category {
+	/*font-family: 'Computer Modern Typewriter Light';*/
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 50px;
+	hyphens: none;
+	text-transform: uppercase;
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+}
+
+#category:hover{
+	font-family: 'Computer Modern Typewriter';
+	font-style: italic;
+	letter-spacing: 1pt;
+    cursor: pointer;
+    font-size: 34pt;
+    text-transform: capitalize;
+    margin-bottom: -3px;
+    /*position: relative;*/
+/*    margin-bottom: -.5px;*/
+/*    top: 2.4px;*/
+}
+
+.deg0 {
+	transform: rotate(0deg);
+}
+
+.deg90 {
+	transform: rotate(90deg);
+}
+
+.deg180 {
+	transform: rotate(180deg);
+}
+
+.deg270 {
+	transform: rotate(270deg);
+}
+
+.draggable {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	background-color: black;
+	position: fixed;
+	z-index: 100000;
+	cursor: pointer;
+	  -webkit-transition: background-color .3s ease-out;
+  -moz-transition: background-color .3s ease-out;
+  -o-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
+}
+
+.random {
+	top: 20px;
+	right: 20px;
+}
+
+.lights {
+	top: 75px;
+	right: 75px;
+}
+
+.next {
+	top: 130px;
+	right: 130px;
+}
+
+.random:hover {
+	background-color: rgb(18, 155, 68);
+  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+}
+
+.random:focus {
+	outline: none;
+}
+
+.next:hover {
+	background-color: rgb(219, 0, 0);
+	  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+}
+
+.next:focus {
+	outline: none;
+}
+
+.lights:hover {
+	background-color: white;
+  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+}
+
+.shine {
+	background-color: white;
+  -webkit-transition: background-color .2s ease-out;
+  -moz-transition: background-color .2s ease-out;
+  -o-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    #category {
+        width: 100%;
+    }
+
+
+    .middle {
+    	max-height: 40% 
+    }
+
+    #slide-image {
+    	height: 100%;
+    }
+
+    .caption {
+    	font-size: 25pt;
+    	line-height: 26.5pt;
+    }
+
+    #category:hover {
+    	letter-spacing: 1pt;
+	    line-height: 26.5pt;
+	    font-size: 30pt;
+    	margin-bottom: -5px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .caption {
+    	font-size: 44px;
+    	line-height: 46px;
+    }
+
+    #category:hover {
+    	letter-spacing: 1px;
+	    font-size: 50px;
+	    line-height: 26.5pt;
+    	margin-bottom: -3px;
+    }
+}

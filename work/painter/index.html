@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<head>
+    <title>Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="surf" width="512" height="512"></canvas>
+
+<nav>
+
+<!--     <button data-tool="stampTool" class="active">LINE</button>
+    <button data-tool="stampTool" class="active">RECT</button> -->
+    <button data-tool="stampTool1" class="active">STAMP1</button>  
+    <button data-tool="stampTool2" class="active">STAMP2</button>
+    <button data-tool="stampTool3" class="active">STAMP3</button>
+    <button data-tool="stampTool4" class="active">STAMP4</button>
+    <button data-tool="stampTool5" class="active">STAMP5</button>
+    <button data-tool="stampToolE" class="active">ERASER</button>
+
+
+</nav>
+
+<div class="text">
+
+Aliza Nisenbaum<br>
+Thursday,<br>
+April 26, 2018<br>
+353 Crown St.<br>
+12:30 pm<br>
+Room C220<br>
+
+</div>
+
+<img width="40px" id="stamp1" src="eye2.png">
+<img id="stamp2" src="eye3.png">
+<img id="stamp3" src="angel.png">
+<img id="stamp4" src="eye5.png">
+<img id="stamp5" src="eye1.png">
+<img id="stampE" src="eraser.png">
+
+
+<script> //Entry Point
+    const surf = document.querySelector('#surf')
+
+    surf.width = window.innerWidth
+    surf.height = window.innerHeight
+
+    const ctx = surf.getContext('2d')
+
+    function randInteger(n) {
+        return Math.floor(Math.random() * n)
+    }
+
+    // objects that end with Tool, look like this...
+    var activeDrawingTool = {
+        click: function () { console.log('Click') }
+    }
+
+    var isDragging = false
+
+</script>
+
+<script src="random_line.js"></script>
+<script src="random_rect.js"></script>
+<script src="stamp.js"></script>
+
+<script> <!-- Set active drawing tool -->
+
+    activeDrawingTool = stampTool1
+
+
+    surf.onclick = function (eventData) {
+    activeDrawingTool.click(eventData)
+    }
+
+    //1
+    surf.onmousedown = function () {
+        isDragging = true
+    }
+
+    window.onmousemove = function (eventData) {
+        if (activeDrawingTool.drag && isDragging) {
+            activeDrawingTool.drag(eventData)
+        }
+    }
+
+    window.onmouseup = function () {
+        isDragging = false
+    }
+
+    window.onkeydown = function () {
+
+        // If activeDrawingTool references same data as...
+        if (activeDrawingTool === randomRectTool) {
+           activeDrawingTool = randomLineTool
+           console.log('Switched to random line tool.')
+        } else {
+            activeDrawingTool = randomRectTool
+            console.log('Switched to random rect tool.')
+        }
+    }
+
+    //Tool List
+    const tools = {
+        randomLineTool: randomLineTool,
+        randomRectTool: randomRectTool,
+        stampTool1: stampTool1,
+        stampTool2: stampTool2,
+        stampTool3: stampTool3,
+        stampTool4: stampTool4,
+        stampTool5: stampTool5,        
+        stampToolE: stampToolE,    
+    }
+
+    window.tools = tools
+
+    //Tool Button Logic
+    const buttons = document.querySelectorAll('nav button')
+
+    buttons.forEach(function(b) {
+
+        b.onclick = function (event) {
+
+            const el = event.target
+            const tool = el.dataset.tool
+            activeDrawingTool = tools[tool]
+            const activeButton = document.querySelector('nav button.active')
+            activeButton.classList.remove('active')
+            el.classList.add('active')
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
