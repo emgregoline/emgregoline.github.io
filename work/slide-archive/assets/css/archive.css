@@ -40,6 +40,10 @@ img {
 	height: inherit;
 }
 
+.thumb-caption:hover {
+	display: none;
+}
+
 .draggable {
 	height: 60px;
 	width: 60px;

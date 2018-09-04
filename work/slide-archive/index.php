@@ -2,9 +2,9 @@
 <head>
   <title>The Miscellaneous Categories Slides Collection</title>
 
-  <link rel="stylesheet" href="assets/fonts/Typewriter Variable/cmun-typewriter-variable.css">
+  <!-- <link rel="stylesheet" href="assets/fonts/Typewriter Variable/cmun-typewriter-variable.css">
   <link rel="stylesheet" href="assets/fonts/Typewriter Light/cmun-typewriter-light.css">
-  <link rel="stylesheet" href="assets/fonts/Typewriter/cmun-typewriter.css">
+  <link rel="stylesheet" href="assets/fonts/Typewriter/cmun-typewriter.css"> -->
   <link rel="stylesheet" href="assets/css/misc_slides.css">
   <!-- <link rel="stylesheet" href="assets/css/archive.css">   -->
 
@@ -103,8 +103,8 @@ $randCategory = $allCategories[array_rand($allCategories)];
 
 $category = $allCategories[array_rand($allCategories)];
 
-  echo "<a class='random draggable' href='index.php?category=$randCategory' style='top:" . rand(10,150) . "px; right:" . rand(10,150) . "px;'></a>";
-  echo "<a class='next draggable' href='index.php?category=$category' style='top:" . rand(10,150) . "px; right:" . rand(10,150) . "px;'></a>";
+  echo "<a class='random draggable' href='index.php?category=$randCategory' style='top:25px; right:25px;'></a>";
+  echo "<a class='next draggable' href='index.php?category=$category' style='top:135px; right:135px;'></a>";
 
    // Select a random slide from within the same category
   $sqlNext = "SELECT * FROM slides WHERE category = '$category' ORDER BY RAND()";

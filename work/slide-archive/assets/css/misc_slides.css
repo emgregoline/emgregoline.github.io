@@ -94,7 +94,7 @@ body {
 }
 
 #category:hover{
-	font-family: 'Computer Modern Typewriter';
+/*	font-family: 'Computer Modern Typewriter';*/
 	font-style: italic;
 	letter-spacing: 1pt;
     cursor: pointer;
