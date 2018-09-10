@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>hito steyerl lecture</title>
+  <link rel="stylesheet" href="assets/demo.css">
+  <script src="../build/tracking-min.js"></script>
+  <script src="../build/data/face-min.js"></script>
+
+  <style>
+
+  body {
+    background-color: black;
+    margin: 0
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;;
+  }
+
+/*  .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }*/
+
+  video, canvas {
+    position: absolute;
+    display: flex;
+  }
+
+  video {
+    z-index: -1;
+  }
+
+  .dg.ac {
+  z-index: 100 !important;
+  top: 50px !important;
+}
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <video id="video" width="800" height="600" preload autoplay loop muted></video>
+  <canvas id="canvas" width="800" height="600"></canvas>
+
+  <div class="image-container" style="opacity: 0;">
+    <img id="hito">
+  </div>
+</div>
+
+<script>
+    window.onload = function() {
+      var video = document.getElementById('video');
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+      var hito = document.getElementById('hito');
+
+      var images = [
+        'assets/hito/image_1.jpg',
+        'assets/hito/image_2.jpg', 
+        'assets/hito/image_3.jpg', 
+        'assets/hito/image_4.jpg', 
+        'assets/hito/image_5.jpg',
+        'assets/hito/image_6.jpg', 
+        'assets/hito/image_7.jpg'
+      ];
+
+      var getRandomImage = function () {
+        return images[Math.floor(Math.random() * images.length)];
+      };
+      
+      var image = getRandomImage();
+      console.log(image);
+
+      document.getElementById('hito').src = image;
+
+      var tracker = new tracking.ObjectTracker('face');
+      tracker.setInitialScale(4);
+      tracker.setStepSize(2);
+      tracker.setEdgesDensity(0.1);
+
+      tracking.track('#video', tracker, { camera: true });
+
+      tracker.on('track', function(event) {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        event.data.forEach(function(rect) {
+          context.strokeStyle = 'transparent';
+          context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+          context.font = '16px Helvetica';
+          context.fillStyle = "#fff";
+          context.drawImage(hito, rect.x, rect.y, rect.width, rect.height);
+          context.fillText('hito steyerl lecture', rect.x + rect.width + 5, rect.y + 16);
+          context.fillText('february 21 2018 6:00pm', rect.x + rect.width + 5, rect.y + 32);
+          context.fillText('E.I.K. 26 edgewood', rect.x + rect.width + 5, rect.y + 48);
+
+        });
+
+
+
+      });
+
+    };
+</script>
+
+</body>
+</html>
