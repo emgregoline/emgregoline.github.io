@@ -29,7 +29,7 @@
 <!-- prove humanity -->
 	<div id="secret-container">
 		<img id="folder" src="assets/images/folder.png">
-		<p>CONTROL_ROOM_MASTER</p>
+		<p id="controlroommaster">CONTROL_ROOM_MASTER</p>
 	</div>
 </div>
 
@@ -49,7 +49,7 @@
 		    <p id="proveit">Prove you are human</p>
 		    <p class="result"></p>
 		    <img src="assets/images/mystery_word.png">
-		    
+
 		    <p id="result"></p>
 
 			<p>
@@ -70,7 +70,7 @@
 
 <script>
 // $(document).ready(function(){
-// 	$('body,html').animate({scrollTop: 13000}, 170000); 
+// 	$('body,html').animate({scrollTop: 13000}, 170000);
 // });
 
 function popUp() {
@@ -86,7 +86,7 @@ var btn = document.getElementById("secret-container");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
 btn.ondblclick = function() {
     modal.style.display = "block";
 }
@@ -105,15 +105,15 @@ window.onclick = function(event) {
 
 
 // //trigger wrong buzzer
-// var audio = document.getElementById("wrongBuzzer"); 
+// var audio = document.getElementById("wrongBuzzer");
 
-// function playAudio() { 
-//     audio.play(); 
-// } 
+// function playAudio() {
+//     audio.play();
+// }
 
-// function pauseAudio() { 
-//     audio.pause(); 
-// } 
+// function pauseAudio() {
+//     audio.pause();
+// }
 
 
 //Enter password in modal
@@ -128,11 +128,11 @@ function assignGrade() {
   score = document.getElementById("scoreInput").value;
 
   // make sure they typed a number. If not, end the function.
-  // if score is "not a number," isNaN() returns false 
+  // if score is "not a number," isNaN() returns false
   //  if (isNaN(score)) {
   //   document.getElementById("result").innerHTML = "You must type a NUMBER.";
   //   return;
-  // } 
+  // }
   // test the number and determine letter grade
   if (score == "bunker") {
     grade = "CORRECT";
