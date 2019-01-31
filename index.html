@@ -5,14 +5,17 @@
 	<meta charset="utf-8" />
 	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 	<style>
-		p {
-			font-size: 24px;
-			/* line-height: 26px; */
-			letter-spacing: 1pt;
-			font-family: "Arial", Helvetica, sans-serif;
+		a {
+			font-size: 18px;
+			letter-spacing: .3pt;
+			font-family: "Times New Roman", Times, serif;
 			margin-block-start: 0.25em;
 			margin-block-end: 0.25em;
-			margin-left: 0.25em;
+			/* margin-left: 0.25em; */
+		}
+
+		#ul {
+			text-decoration: underline;
 		}
 		body {
 			cursor: pointer;
@@ -22,17 +25,14 @@
 	</style>
 </head>
 <body>
-		<p>Emma Gregoline<br>
-			c/o Yale School of Art<br>
-			1156 Chapel St.<br>
-			New Haven, CT 06511<br>
-			emma@greg.online
-		</p>
+		<a>Emma Gregoline</a>
+			<a id="ul">Emma@Greg.online</a>
+
 
 	<script>
 	$(document).ready(function() {
 
-	    $( "p" ).mousemove(function( event ) {
+	    $( "a" ).mousemove(function( event ) {
 
 	      var w = (event.pageX < 100000) ? event.pageX :100000;
 	      var h = (event.pageY < 100000) ? event.pageY :100000;
